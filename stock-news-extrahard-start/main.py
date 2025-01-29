@@ -49,10 +49,10 @@ if percentdiff < 5:
         msg.append(articles[i]['description'])
         title.append(articles[i]['title'])
 
-title[2] = "yes"
-msg[2] = "turkey"
-
-print(title)
+# title[2] = "yes"
+# msg[2] = "turkey"
+#
+# print(title)
 ## STEP 3: Send to email or messaging app
 # Send a seperate message with the percentage change and each article's title and description to your phone number. 
 
@@ -61,7 +61,7 @@ for i in range(1, len(msg)):
         email_msg = f'Subject:{title[i]}\n\nThe percentage difference was {msg[0]}.\n{msg[i]}'
         connection.starttls()
         connection.login(user=my_email, password=my_password)
-        connection.sendmail(from_addr=my_email, to_addrs=my_email, msg=email_msg.encode("utf-8") )
+        connection.sendmail(from_addr=my_email, to_addrs=my_email, msg=email_msg.encode("utf-8"))
 
 #Optional: Format the SMS message like this: 
 """
